@@ -10,6 +10,13 @@ int main ()
     {5, 6}
   };
 
+  for(int i = 0; i < 3; i++) {
+    for(int j = 0; j < 2; j++) {
+      cout << numberGrid[i][j];
+    }
+    cout << endl;
+  }
+
   cout << numberGrid[2][0] << endl;
 
   return 0;
