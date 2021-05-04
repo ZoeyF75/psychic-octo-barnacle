@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int getMax(int num1, int num2) {
-  return num1 > num2 ? num1 : num2;
+int getMax(int num1, int num2, int num3) {
+  return num1 >= num2 ? num1 >= num3 ? num1 : num2 >= num3? num2 : num3 : num2 > num3? num2: 0;
 }
 
 int main() {
@@ -21,7 +21,7 @@ int main() {
     cout << "You are not male" << endl;
   }
 
-  cout << getMax(5, 2) << endl;
+  cout << getMax(6, 5, 10) << endl;
   
   return 0;
 }
