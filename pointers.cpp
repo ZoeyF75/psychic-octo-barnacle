@@ -22,5 +22,8 @@ int main ()
   cout << "GPA: " << pGpa << endl;
   cout << "Name: " << pName << endl;
 
+  //dereferencing pointer, gives actual value
+   cout << "Age: " << *pAge << endl;
+   cout << "GPA: " << *&gpa << endl;
   return 0;
 }
