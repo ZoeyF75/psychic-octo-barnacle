@@ -28,6 +28,5 @@ int main ()
   cout << student1.hasHonors() << endl; // 0 == false
   cout << student2.hasHonors() << endl; // 1 == true
 
-
   return 0;
 }
