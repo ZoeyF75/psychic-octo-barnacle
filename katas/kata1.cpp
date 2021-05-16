@@ -18,6 +18,10 @@ int* fillarr(int arr[], int length, int largestNums[]) {
   return largestNums;
 }
 
+int sum (int one, int two) {
+  return one + two;
+}
+
 // In this exercise, we will be given an array of 2 or more numbers. We will then have to find the two largest numbers in that array, and sum them together.
 int main ()
 {
@@ -27,6 +31,7 @@ int main ()
   int *a = fillarr(testArray, array_length, largestNums);
   cout << "The biggest number: " << a[0] << endl;
   cout << "The second biggest number: " << a[1] << endl;
+  cout << "Their sum is: " << sum(a[0], a[1]) << endl;
 
   return 0;
 }
