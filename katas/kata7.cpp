@@ -2,8 +2,16 @@
 
 using namespace std;
 
-string checkAir(string samples[], int threshold, int numOfSamples) {
-
+string checkAir(string samples[], double threshold, int numOfSamples) {
+  int numOfPolluted = 0;
+  for (int i = 0; i < numOfSamples; i++) {
+    if (samples[i] == "dirty") {
+      numOfPolluted++;
+    }
+  }
+  cout << numOfPolluted << ", " << numOfSamples << endl;
+  double percentage = numOfPolluted / numOfSamples;
+  return percentage >= threshold ? "dirty" : "clean";
 }
 
 int main ()
