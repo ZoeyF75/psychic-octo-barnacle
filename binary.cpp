@@ -1,31 +1,18 @@
 #include <iostream>
-#include <string.h>
-
+#include <cmath>
 using namespace std;
 
-void IntToBinary(int n, char * p) {
-  char * pStr = p;
-
-  if (NULL == p) {
-    return;
-  }
-  do {
-    n % 2 == 0 ? *p = '0' : *p = '1';
-    p++;
-    n /= 2;
-  } while (n > 0);
-  *p = '\0';
-  _strrev(pStr);
-}
-
-
-int main() {
+int main(){
   
-  char b[100];
-  for (int i = 0; i < 256; i++) {
-    IntToBinary(i, b);
-    printf("%d = %s\n", i, b);
+  long long x;
+
+  cin>>x;
+  int k=log2(x);
+
+  for (int i = k; i >= 0;i--){
+      (x&(1<<i))==0 ? cout<<0   : cout<<1;
   }
+  cout <<endl;
 
   return 0;
 }
