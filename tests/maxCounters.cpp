@@ -4,26 +4,22 @@
 
 using namespace std;
 
-vector<int> maxIncrease (vector<int> &A, int l) {
-    int maxElement = *std::max_element(A.begin(), A.end());
-    vector<int> maxV(l, maxElement);
-    return maxV;
-}
-
-vector<int> increment (int counter, vector<int> &A) {
-    counter--; //gives the index postion
-    A[counter] += 1;
-    return A;
-}
-
 vector<int> solution(int N, vector<int> &A) {
-    int max = N + 1;
+    vector<int> R(N, 0);
     int length = A.size();
-    vector<int> arr(N, 0); // 0, 0, 0, 0, 0 * N
+    int m = 0;
+    int b = 0;
     for (int i = 0; i < length; i++) {
-        arr = A[i] == max ? maxIncrease(arr, N) : increment(A[i], arr);
+        if (A[i] <= N) {
+        R[A[i]-1] = max(b, R[A[i] - 1]) + 1;
+        m = max(m, R[A[i] - 1]);
+        } else b=m;
     }
-    return arr;
+    length = R.size();
+    for(int i = 0; i < length; i++) {
+        if (R[i] < b) R[i] = b;
+    }
+    return R;
 }
 
 int main () {
