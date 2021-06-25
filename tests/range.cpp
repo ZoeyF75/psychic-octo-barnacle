@@ -4,13 +4,10 @@
 using namespace std;
 
 int solution(int A, int B, int K) {
-    vector<int> v;
-    for (int i = A; i <= B; i++) {
-        if (i % K == 0) {
-            v.push_back(i);
-        }
-    }
-    return v.size();
+  int c = (B/K) - (A/K);
+  if (A % K == 0) c++;
+  return c;
+
 }
 
 int main() {
